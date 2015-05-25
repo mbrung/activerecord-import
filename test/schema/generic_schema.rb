@@ -116,4 +116,12 @@ ActiveRecord::Schema.define do
     t.boolean :active, :default => false
     t.text    :data
   end
+
+  create_table :rules, force: true do |t|
+    t.column :condition_text, :string
+    t.column :question_id, :integer
+  end
+  create_table :questions, force: true do |t|
+    t.column :body, :string
+  end
 end
